@@ -1,11 +1,13 @@
 import React, { use } from 'react';
 import { FaStar } from "react-icons/fa";
+import { Link } from 'react-router';
 const Book = ({ singleBook }) => {
     // const data=use(booksPromise);
     console.log(singleBook)
-    const { author, bookId, bookName, category, image, publisher, rating, totalPages, tags, yearOfPublishing } = singleBook;
+    const { author, bookName, category, image, rating, tags, yearOfPublishing,bookId } = singleBook;
     return (
-        <div className="card bg-base-100 border-1 border-gray-300">
+        <Link to={`/bookDetails/${bookId}`}>
+            <div className="card bg-base-100 border-1 border-gray-300">
             <figure className='bg-gray-200 p-6'>
                 <img className='h-[200px] rounded-2xl' src={image} />
 
@@ -22,7 +24,7 @@ const Book = ({ singleBook }) => {
                     {bookName}
                     <div className="badge badge-secondary">{yearOfPublishing}</div>
                 </h2>
-                <p className='text-lg font-semibold text-gray-500'> By : {author}</p>
+                <p className='text-lg font-semibold text-gray-500'>Writter : {author}</p>
                 <p className='divider'></p>
                 <div className='flex justify-between text-lg font-semibold text-gray-600'>
                     <h2>{category}</h2>
@@ -30,6 +32,7 @@ const Book = ({ singleBook }) => {
                 </div>
             </div>
         </div>
+        </Link>
     );
 };
 

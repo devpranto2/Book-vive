@@ -1,5 +1,6 @@
 import React from 'react';
 import bannrImg from '../../assets/pngwing 1.png'
+import { Link } from 'react-router';
 const Banner = () => {
     return (
         
@@ -7,7 +8,7 @@ const Banner = () => {
                 <div className='flex-1  flex flex-col justify-center items-center space-y-5'>
                     <h1 className="text-4xl font-bold">Books to freshen up your bookshelf</h1>
 
-                    <button className="btn bg-green-500  text-white">View The List</button>
+                    <Link to={'/list'}><button className="btn bg-green-500  text-white">View The List</button></Link>
                 </div>
                 <div className='flex-1 flex flex-col justify-center items-center'>
                     <img
