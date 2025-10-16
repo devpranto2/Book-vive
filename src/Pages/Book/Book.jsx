@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router';
 const Book = ({ singleBook }) => {
     // const data=use(booksPromise);
-    console.log(singleBook)
+    // console.log(singleBook)
     const { author, bookName, category, image, rating, tags, yearOfPublishing,bookId } = singleBook;
     return (
         <Link to={`/bookDetails/${bookId}`}>
@@ -16,7 +16,7 @@ const Book = ({ singleBook }) => {
             <div className="p-6">
                 <div className='gap-3 card-actions mb-3'>
                   {
-                    tags.map((tag)=><div className="badge bg-green-50 text-green-500 font-semibold">{tag}</div>)
+                    tags.map((tag,index)=><div key={index} className="badge bg-green-50 text-green-500 font-semibold">{tag}</div>)
                   }
                   
                 </div>

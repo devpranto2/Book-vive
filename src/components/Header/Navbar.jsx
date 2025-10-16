@@ -22,7 +22,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link to={'/'}><a className="p-3 font-semibold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-yellow-400 md:text-xl md:font-bold">Book Vive</a></Link>
+                <Link to={'/'}><p className="p-3 font-semibold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-yellow-400 md:text-xl md:font-bold">Book Vive</p></Link>
             </div>
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu menu-horizontal px-1">
