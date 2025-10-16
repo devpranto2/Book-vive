@@ -7,6 +7,7 @@ import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import ToTheList from "../Pages/ToTheList/ToTheList";
+import Readlist from "../Pages/Readlist/Readlist";
 
 
 
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
         {
           path:'list',
           Component:ToTheList
+        },
+        {
+            path:'readlist',
+            Component:Readlist,
         },
         {
           path:'/bookDetails/:id',

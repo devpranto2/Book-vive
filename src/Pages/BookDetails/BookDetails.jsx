@@ -1,13 +1,21 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoreDB } from '../../Utility/AddToDB';
 
 const BookDetails = () => {
     const { id } = useParams();
     const bookId = parseInt(id)
     const data = useLoaderData();
     const singleBook = data.find(book => book.bookId === bookId)
-    console.log(singleBook)
-    const { author, bookName, category, image, rating, tags, yearOfPublishing,review ,totalPages,publisher} = singleBook;
+    // console.log(singleBook)
+    const { author, bookName, category, image, rating, tags, yearOfPublishing,review ,totalPages,publisher} = singleBook || {};
+
+
+    const handleMarkAsRead=id=>{
+        addToStoreDB(id)
+    }
+
+
     return (
         <div className=" card-side bg-base-100 shadow-sm mt-5 md:flex">
             <div className='p-7 flex-1 flex flex-col justify-center'>
@@ -31,8 +39,8 @@ const BookDetails = () => {
                <p className='text-gray-500'>Year of Publishing : <span className='font-semibold text-black'>{yearOfPublishing}</span></p>
                <p className='text-gray-500'>rating : <span className='font-semibold text-black'>{rating}</span></p>
                 <div className="card-actions  mt-5">
-                    <button className="btn bg-green-500 text-white">Read</button>
-                    <button className="btn bg-green-500 text-white">Wishlist</button>
+                    <button onClick={()=>handleMarkAsRead(id)} className="btn bg-green-500 text-white">Mark as Read</button>
+                    <button className="btn bg-green-500 text-white">Add to Wishlist</button>
                 </div>
             </div>
         </div>
