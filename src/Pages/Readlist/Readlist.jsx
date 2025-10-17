@@ -15,11 +15,12 @@ const Readlist = () => {
 
 
     useEffect(() => {
+        
         const storedBookData = getStoredBook();
         const convertStoredBookData = storedBookData.map(id => parseInt(id))
         const myReadlist = data.filter(book => convertStoredBookData.includes(book.bookId));
         setReadList(myReadlist)
-    }, [])
+    }, []);
 
 
     const handleSort=(type)=>{
